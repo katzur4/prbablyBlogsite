@@ -1,0 +1,20 @@
+{
+  "name": "probablyblogsite",
+  "version": "1.0.0",
+  "description": "This is a practice site \r https://www.youtube.com/watch?v=Kkht2mwSL_I",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon api/index.js",
+    "start": "node api/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.18.2",
+    "mongoose": "^8.2.0",
+    "nodemon": "^3.1.0"
+  }
+}
