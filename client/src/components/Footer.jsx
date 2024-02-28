@@ -55,11 +55,11 @@ export default function FooterCom() {
                 <Footer.Copyright href="#" by="John Wesley Valentino" year={new Date().getFullYear()} />
             
                 <div className="flex gap-6 sm:mt-0 mt-4 sm:justify-center">
-                    <Footer.Icon href="https://facebook.com/johnwesley.valentino" icon={BsFacebook} />
-                    <Footer.Icon href="https://instagram.com/katzur4" icon={BsInstagram} />
-                    <Footer.Icon href="https://github.com/katzur4" icon={BsGithub} />
-                    <Footer.Icon href="https://twitter.com/tr3es2" icon={BsTwitter} />
-                    <Footer.Icon href="https://www.youtube.com/@katzur4/" icon={BsYoutube} />
+                    <Footer.Icon href="https://facebook.com/johnwesley.valentino" icon={BsFacebook} target="_blank" />
+                    <Footer.Icon href="https://instagram.com/katzur4" icon={BsInstagram} target="_blank" />
+                    <Footer.Icon href="https://github.com/katzur4" icon={BsGithub} target="_blank" />
+                    <Footer.Icon href="https://twitter.com/tr3es2" icon={BsTwitter} target="_blank" />
+                    <Footer.Icon href="https://www.youtube.com/@katzur4/" icon={BsYoutube} target="_blank" />
                 </div>
             </div>
         </div>
