@@ -48,7 +48,7 @@ export default function FooterCom() {
                             </Footer.Link>
                         </Footer.LinkGroup>
                     </div>
-                </div>
+                </div>  
             </div>
             <Footer.Divider />
             <div className="w-full sm:flex sm:items-center sm:justify-between">
