@@ -12,10 +12,8 @@ export default function oauth() {
     const dispatch =  useDispatch();
     const navigate = useNavigate();
     const handleGoogleClick = async () =>{
-
         const provider = new GoogleAuthProvider();
-        provider.setCustomParameters({prompt: 'select_account'})
-
+        provider.setCustomParameters({prompt: 'select_account'});
         try {
             const resultsFromGoogle = await signInWithPopup(auth, provider)
             const res = await fetch('api/auth/google', {
@@ -28,6 +26,7 @@ export default function oauth() {
                 })
 
             });
+            const data = await res.json()
            if(res.ok){
                 dispatch(signInSuccess(data));
                 navigate('/');
