@@ -8,26 +8,26 @@ export const test = (req, res) => {
 
 export const updateUser = async (req, res, next) =>{
     if(req.user.id !== req.params.userId){
-        return(errorHandler(403, 'You are not allow to update this user!'));
+        return next(errorHandler(403, 'You are not allow to update this user!'));
     }
     if (req.body.password){
         if(req.body.password.length < 6){
-             return(errorHandler(400, 'Password must be at least 6 characters'));
+             return next(errorHandler(400, 'Password must be at least 6 characters'));
         }
         req.body.password = bcryptjs.hashSync(req.body.password, 10);
     }
     if(req.body.username){
         if(req.body.username.length < 7 || req.body.username.length > 20){
-            return(errorHandler(400, 'Username should be more than 7 and less than 20 characters'));
+            return next(errorHandler(400, 'Username should be more than 7 and less than 20 characters'));
         }
         if(req.body.username.includes(' ')){
-            return(errorHandler(400, 'Username cannot contain spaces'));
+            return next(errorHandler(400, 'Username cannot contain spaces'));
         }
         if(req.body.username !== req.body.username.toLowerCase()){
-            return(errorHandler(400, 'Username must be lowercase'));
+            return next(errorHandler(400, 'Username must be lowercase'));
         }
         if(!req.body.username.match(/^[a-zA-Z0-9]+$/)){
-            return(errorHandler(400, 'Username can only contain letters and numbers'));
+            return next(errorHandler(400, 'Username can only contain letters and numbers'));
         }
     }
     try {
