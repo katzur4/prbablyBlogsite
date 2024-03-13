@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
     profilePicture:{
         type : String,
         default : 'https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png'
+    },
+    isAdmin: {
+        type : Boolean,
+        default : false
     }
 
 },{timestamps : true});
