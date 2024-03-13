@@ -35,7 +35,7 @@ export default function DashSidebar() {
             console.log(error.message)
         }
     }
-    console.log(currentUser);
+
   return (
     <Sidebar className='w-full md:w-56'>
         <Sidebar.Items>
