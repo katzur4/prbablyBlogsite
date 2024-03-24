@@ -33,9 +33,8 @@ export default function DashUsers() {
 
   const handleShowMore = async () => {
     const startIndex = users.length;
-    console.log(users.length);
     try {
-      const res = await fetch(`/api/post/getusers?startIndex=${startIndex}`);
+      const res = await fetch(`/api/user/getusers?startIndex=${startIndex}`);
       const data = await res.json();
       if (res.ok){
         setUsers((prev) => [...prev, ...data.users]);
@@ -125,7 +124,7 @@ export default function DashUsers() {
           )}
           </>
         ) : (
-          <p>You have no post yet</p>
+          <p>List blank</p>
         )}
         <Modal 
             show={showModal} 
