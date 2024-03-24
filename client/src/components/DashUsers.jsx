@@ -48,25 +48,22 @@ export default function DashUsers() {
     }
   };
   const handleDeleteUser = async () => {
-    setShowModal(false);
-   /*  try {
-      const res = await fetch(`/api/post/deleteuser/${userIdtoDelete}/${currentUser._id}`,
-        {
-          method: 'DELETE'
-
-        });
+    
+    try {
+      const res = await fetch(`/api/user/delete/${userIdtoDelete}`,{
+        method: 'DELETE'
+      });
       const data = await res.json();
-      if(!res.ok){
-        console.log(data.message)
+      if(res.ok){
+        setUsers((prev) => prev.filter((user) => user._id !== userIdtoDelete))
+        setShowModal(false);
       }else{
-        setUsers((prev) => 
-          prev.filter((post) => post._id !== userIdtoDelete)
-        
-        )
+        console.log(data.message)
       }
     } catch (error) {
       console.log(error.message)
-    } */
+    }
+
   };
 
   return (
@@ -93,7 +90,7 @@ export default function DashUsers() {
                      <img 
                           src = {user.profilePicture}
                           alt = {user.username}
-                          className="w-20 h-10 object-cover bg-gray-500 rounded-full"
+                          className="w-12 h-12 object-cover bg-gray-500 rounded-full"
                     />
                   </Table.Cell>
                   <Table.Cell>
@@ -108,7 +105,7 @@ export default function DashUsers() {
                   <Table.Cell>
                       <span onClick={() => {
                         setShowModal(true);
-                        setUserIdToDelete(post._id);
+                        setUserIdToDelete(user._id);
 
                       }} className="font-medium text-red-500 hover:underline cursor-pointer">
                         Delete
